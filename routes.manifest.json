@@ -1,0 +1,288 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/recipes",
+    "auth_required": false,
+    "sample_params": {},
+    "sample_body": null,
+    "success_status": 200,
+    "response_shape": [
+      {
+        "id": "number",
+        "title": "string",
+        "description": "string | null",
+        "imageUrl": "string | null",
+        "prepTime": "number | null",
+        "cookTime": "number | null",
+        "servings": "number | null",
+        "difficulty": "string | null",
+        "categoryId": "number | null",
+        "category": {
+          "id": "number",
+          "name": "string",
+          "color": "string | null"
+        },
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/recipes",
+    "auth_required": false,
+    "sample_params": {},
+    "sample_body": {
+      "title": "Spicy Thai Basil Chicken",
+      "description": "Quick stir-fry with fresh basil",
+      "imageUrl": null,
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 4,
+      "difficulty": "Easy",
+      "categoryId": 2,
+      "ingredients": [
+        {
+          "name": "chicken breast",
+          "quantity": "500",
+          "unit": "g",
+          "sortOrder": 0
+        }
+      ],
+      "instructions": [
+        {
+          "stepNumber": 1,
+          "content": "Cut the chicken into bite-sized pieces."
+        }
+      ]
+    },
+    "success_status": 201,
+    "response_shape": {
+      "id": "number",
+      "title": "string",
+      "description": "string | null",
+      "imageUrl": "string | null",
+      "prepTime": "number | null",
+      "cookTime": "number | null",
+      "servings": "number | null",
+      "difficulty": "string | null",
+      "categoryId": "number | null",
+      "createdAt": "string",
+      "updatedAt": "string",
+      "ingredients": [
+        {
+          "id": "number",
+          "name": "string",
+          "quantity": "string | null",
+          "unit": "string | null",
+          "sortOrder": "number"
+        }
+      ],
+      "instructions": [
+        {
+          "id": "number",
+          "stepNumber": "number",
+          "content": "string"
+        }
+      ]
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/:id",
+    "auth_required": false,
+    "sample_params": {
+      "id": 1
+    },
+    "sample_body": null,
+    "success_status": 200,
+    "response_shape": {
+      "id": "number",
+      "title": "string",
+      "description": "string | null",
+      "imageUrl": "string | null",
+      "prepTime": "number | null",
+      "cookTime": "number | null",
+      "servings": "number | null",
+      "difficulty": "string | null",
+      "categoryId": "number | null",
+      "category": {
+        "id": "number",
+        "name": "string",
+        "color": "string | null"
+      },
+      "createdAt": "string",
+      "updatedAt": "string",
+      "ingredients": [
+        {
+          "id": "number",
+          "name": "string",
+          "quantity": "string | null",
+          "unit": "string | null",
+          "sortOrder": "number"
+        }
+      ],
+      "instructions": [
+        {
+          "id": "number",
+          "stepNumber": "number",
+          "content": "string"
+        }
+      ]
+    }
+  },
+  {
+    "method": "PUT",
+    "path": "/api/recipes/:id",
+    "auth_required": false,
+    "sample_params": {
+      "id": 1
+    },
+    "sample_body": {
+      "title": "Updated Recipe Title",
+      "servings": 6
+    },
+    "success_status": 200,
+    "response_shape": {
+      "id": "number",
+      "title": "string",
+      "description": "string | null",
+      "imageUrl": "string | null",
+      "prepTime": "number | null",
+      "cookTime": "number | null",
+      "servings": "number | null",
+      "difficulty": "string | null",
+      "categoryId": "number | null",
+      "createdAt": "string",
+      "updatedAt": "string",
+      "ingredients": [
+        {
+          "id": "number",
+          "name": "string",
+          "quantity": "string | null",
+          "unit": "string | null",
+          "sortOrder": "number"
+        }
+      ],
+      "instructions": [
+        {
+          "id": "number",
+          "stepNumber": "number",
+          "content": "string"
+        }
+      ]
+    }
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/recipes/:id",
+    "auth_required": false,
+    "sample_params": {
+      "id": 1
+    },
+    "sample_body": null,
+    "success_status": 200,
+    "response_shape": {
+      "success": "boolean"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/categories",
+    "auth_required": false,
+    "sample_params": {},
+    "sample_body": null,
+    "success_status": 200,
+    "response_shape": [
+      {
+        "id": "number",
+        "name": "string",
+        "description": "string | null",
+        "color": "string | null",
+        "createdAt": "string",
+        "recipeCount": "number"
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/categories",
+    "auth_required": false,
+    "sample_params": {},
+    "sample_body": {
+      "name": "Desserts",
+      "description": "Sweet treats",
+      "color": "#E5B443"
+    },
+    "success_status": 201,
+    "response_shape": {
+      "id": "number",
+      "name": "string",
+      "description": "string | null",
+      "color": "string | null",
+      "createdAt": "string"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/categories/:id",
+    "auth_required": false,
+    "sample_params": {
+      "id": 1
+    },
+    "sample_body": null,
+    "success_status": 200,
+    "response_shape": {
+      "id": "number",
+      "name": "string",
+      "description": "string | null",
+      "color": "string | null",
+      "createdAt": "string",
+      "recipes": [
+        {
+          "id": "number",
+          "title": "string",
+          "description": "string | null",
+          "imageUrl": "string | null",
+          "prepTime": "number | null",
+          "cookTime": "number | null",
+          "difficulty": "string | null",
+          "createdAt": "string"
+        }
+      ]
+    }
+  },
+  {
+    "method": "PUT",
+    "path": "/api/categories/:id",
+    "auth_required": false,
+    "sample_params": {
+      "id": 1
+    },
+    "sample_body": {
+      "name": "Updated Category",
+      "color": "#4A6638"
+    },
+    "success_status": 200,
+    "response_shape": {
+      "id": "number",
+      "name": "string",
+      "description": "string | null",
+      "color": "string | null",
+      "createdAt": "string"
+    }
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/categories/:id",
+    "auth_required": false,
+    "sample_params": {
+      "id": 1
+    },
+    "sample_body": null,
+    "success_status": 200,
+    "response_shape": {
+      "success": "boolean"
+    }
+  }
+]
